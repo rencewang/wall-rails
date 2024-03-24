@@ -1,17 +1,8 @@
 <h1>Posts#index</h1>
 
-<table>
-  <tr>
-    <th>Content</th>
-    <th>Time</th>
-  </tr>
+
+  <%# link_to @user.username, user_path(@user.username) %>
  
-  <% @posts.each do |post| %>
-    <tr>
-      <td><%= post.content %></td>
-      <td><%= post.created_at %></td>
-      <td><%= post.user_id %></td>
-      <td><%= link_to 'Show', post_path(post) %></td>
-    </tr>
-  <% end %>
-</table>
+<% @posts.each do |post| %>
+  <%= render partial: 'post', locals: { post: post } %>
+<% end %>
