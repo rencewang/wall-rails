@@ -9,3 +9,7 @@
 <h1>Home#index</h1>
 <p>This the new Wall</p>
 <p>Currently under construction, check back later</p>
+
+<% @posts.each do |post| %>
+  <%= render partial: '/posts/post', locals: { post: post } %>
+<% end %>

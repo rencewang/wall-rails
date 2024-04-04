@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    render
+    @posts = Post.includes(:user).all.order(created_at: :desc)
   end
 end

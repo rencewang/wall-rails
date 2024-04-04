@@ -1,8 +1,5 @@
 <h1>Posts#index</h1>
 
-
-  <%# link_to @user.username, user_path(@user.username) %>
- 
 <% @posts.each do |post| %>
   <%= render partial: 'post', locals: { post: post } %>
 <% end %>
