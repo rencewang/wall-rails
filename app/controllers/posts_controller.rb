@@ -18,7 +18,7 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to @post
+      redirect_to current_user
     else
       render :new
     end
