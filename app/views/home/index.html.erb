@@ -11,5 +11,5 @@
 <p>Currently under construction, check back later</p>
 
 <% @posts.each do |post| %>
-  <%= render partial: '/posts/post', locals: { post: post } %>
+  <%= render partial: '/posts/post', locals: { post: post, show_user: true } %>
 <% end %>

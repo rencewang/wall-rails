@@ -17,11 +17,6 @@
 
 <table>
   <% @posts.each do |post| %>
-    <tr>
-        <td><%= post.content %></td>
-        <td><%= post.tags %></td>
-        <td><%= post.created_at %></td>
-        <td><%= link_to 'Show', post_path(post) %></td>
-    </tr>
+    <%= render partial: '/posts/post', locals: { post: post, show_user: false } %>
   <% end %>
 </table>
