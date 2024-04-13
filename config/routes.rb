@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :home, only: [:index]
   resources :users, only: [:index, :show]
-  resources :posts, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  resources :posts, only: [:new, :create, :edit, :update, :destroy]
   
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

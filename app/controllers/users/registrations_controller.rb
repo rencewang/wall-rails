@@ -2,12 +2,12 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_account_update_params, only: [:update]
+  before_action :configure_account_update_params, only: [:edit, :update]
 
-  def new
-    flash[:alert] = 'User registrations are temporarily disabled. Please email hello@rence.la for assistance.'
-    redirect_to root_path
-  end
+  # def new
+  #   flash[:alert] = 'User registrations are temporarily disabled. Please email hello@rence.la for assistance.'
+  #   redirect_to root_path
+  # end
 
   # GET /resource/sign_up
   # def new
