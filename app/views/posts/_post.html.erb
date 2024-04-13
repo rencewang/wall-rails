@@ -2,9 +2,13 @@
   <summary>
     <%= post.created_at %> 
     <% if show_user != false %>
-      by <%= link_to post.user.username, user_path(post.user.id) %>
+      by <%= link_to user.username, user_path(user.id) %>
     <% end %>
   </summary>
   <p><%= markdown(post.content) %></p>
   <p><%= post.tags %></p>
+
+  <% if allow_edit && current_user && user == current_user %>
+    <%= link_to "Edit Post", edit_post_path(post) %>
+  <% end %>
 </details>

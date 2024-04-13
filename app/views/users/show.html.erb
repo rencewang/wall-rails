@@ -14,6 +14,6 @@
 
 <table>
   <% @posts.each do |post| %>
-    <%= render partial: '/posts/post', locals: { post: post, show_user: false } %>
+    <%= render partial: '/posts/post', locals: { post: post, user: @user, show_user: false, allow_edit: true } %>
   <% end %>
 </table>
