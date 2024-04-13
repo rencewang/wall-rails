@@ -5,6 +5,6 @@
       by <%= link_to post.user.username, user_path(post.user.id) %>
     <% end %>
   </summary>
-  <p><%= post.content %></p>
+  <p><%= markdown(post.content) %></p>
   <p><%= post.tags %></p>
 </details>
