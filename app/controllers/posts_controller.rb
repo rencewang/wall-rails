@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: %i[index show]
+  before_action :set_post, only: %i[show edit update destroy]
 
   def index
     @posts = Post.includes(:user).all.order(created_at: :desc)
   end
 
   def show
-    @post = Post.find(params[:id])
   end
 
   def new
@@ -18,13 +18,30 @@ class PostsController < ApplicationController
     @post.user = current_user
 
     if @post.save
-      redirect_to current_user
+      redirect_to current_user, notice: 'Post successfully created.'
     else
       render :new
     end
   end
 
+  def update
+    if @post.update(post_params)
+      redirect_to current_user, notice: 'Post successfully updated.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @post.destroy
+    redirect_to current_user, notice: 'Post successfully destroyed.'
+  end
+
   private
+
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
   def post_params
     params.require(:post).permit(:title, :content, :tags)
