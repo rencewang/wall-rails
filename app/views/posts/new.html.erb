@@ -7,7 +7,7 @@
 
   <p>
     <%= f.label :tags %><br>
-    <%= f.text_field :tags %>
+    <%= f.select :tags, options_for_select(['moments', 'lyrics', 'thoughts', 'quotes']), {}, { class: 'form-control' } %>
   </p>
  
   <p>
