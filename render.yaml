@@ -26,7 +26,6 @@ services:
       #   fromDatabase:
       #     name: postgresql-amorphous-16206
       #     property: connectionString
-
-databases:# Render PostgreSQL database
-  # - name: postgresql-amorphous-16206
-  #   ipAllowList: [] # only allow internal connections
+# databases:# Render PostgreSQL database
+# - name: postgresql-amorphous-16206
+#   ipAllowList: [] # only allow internal connections
