@@ -7,7 +7,6 @@ services:
     env: docker # valid values: https://render.com/docs/yaml-spec#environment
     dockerfilePath: Dockerfile.render
     plan: starter # optional; defaults to starter
-    numInstances: 0
     domains: # custom domains
       - 'wall.rence.la'
     envVars:
@@ -28,6 +27,6 @@ services:
       #     name: postgresql-amorphous-16206
       #     property: connectionString
 
-databases: # Render PostgreSQL database
+databases:# Render PostgreSQL database
   # - name: postgresql-amorphous-16206
   #   ipAllowList: [] # only allow internal connections
